@@ -1,0 +1,8 @@
+#!/bin/sh
+[ ! -d "$HOME/.cache/exchange" ] && mkdir "$HOME/.cache/exchange"
+[ "$(stat -c %y "$HOME/.cache/exchange/$1$2" 2> /dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] && 
+	curl -s "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/$1/$2.json" > "$HOME/.cache/exchange/$1$2"
+
+
+
+tail +3 "$HOME/.cache/exchange/$1$2" | head -n 1 | awk '{print $2}' | grep -o -P '.*\..{0,2}' | tr -d '\n' | xargs -0 printf "%s$3\n"

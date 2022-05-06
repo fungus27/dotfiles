@@ -1,0 +1,7 @@
+#!/bin/sh
+while true; do
+tmpentry=$(find ~/.config/.password-store -type f | grep ".gpg$" | sed "s|/home/$USER/.config/.password-store/||;s|.gpg$||" | xargs -r printf "%s\n" | fzf) 
+[ ! -z "$tmpentry" ] && pass show -c $tmpentry 1> /dev/null
+[ "$1" != "loop" ] && break
+clear
+done;

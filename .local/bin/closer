@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case "$(printf "leave dwm\nreboot\nshutdown" | dmenu -fn "$1" -nb "$2" -nf "$3" -sb "$4" -sf "$5" -i -p 'action: ')" in
+	'leave dwm') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
+	'reboot') sudo reboot -i ;;
+	'shutdown') sudo poweroff -i ;;
+	*) exit 1 ;;
+esac

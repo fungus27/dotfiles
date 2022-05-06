@@ -1,0 +1,35 @@
+#!/bin/sh
+
+
+
+if [ -z "$1" ]
+	then
+		echo "No argument supplied"
+		exit 0
+fi
+
+
+if [ "$1" = "-r" ]; then
+	THEME="$(ls -l $HOME/.local/themes | awk '{print $9}' | tail +4 | shuf -n 1)"	
+else
+	THEME=$1
+fi
+
+echo $THEME
+
+cp "$HOME/.local/themes/$THEME/st.h" $HOME/.local/src/st/theme.h
+sudo make clean install -C $HOME/.local/src/st
+
+cp "$HOME/.local/themes/$THEME/alacritty.yml" $HOME/.config/alacritty/colors.yml
+
+cp "$HOME/.local/themes/$THEME/dwm.h" $HOME/.local/src/dwm/theme.h
+sudo make clean install -C $HOME/.local/src/dwm
+
+cp "$HOME/.local/themes/$THEME/prompt" $HOME/.config/zsh/.prompt
+
+cp "$HOME/.local/themes/$THEME/picom.conf" $HOME/.config/picom/picom.conf
+
+cp "$HOME/.local/themes/$THEME/wallpaper.png" $HOME/.config/wallpaper.png
+
+xwallpaper --zoom $HOME/.config/wallpaper.png
+#echo "To see changes, restart X"
