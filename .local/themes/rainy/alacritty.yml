@@ -1,0 +1,27 @@
+colors:
+  primary:
+    background: '0x000000'
+    foreground: '0xffffff'
+  normal:
+    black:   '0x282828'
+    red:     '0xb76969'
+    green:   '0x719d72'
+    yellow:  '0x909858'
+    blue:    '0x68668f'
+    magenta: '0x966894'
+    cyan:    '0x688891'
+    white:   '0x8e8e8e'
+  bright:
+    black:   '0x494949'
+    red:     '0xb87e7e'
+    green:   '0x839d84'
+    yellow:  '0x919864'
+    blue:    '0x73718f'
+    magenta: '0x987397'
+    cyan:    '0x758c93'
+    white:   '0xaeaeae'
+
+window:
+  decorations: none
+  title: alacritty
+  opacity: 0.70

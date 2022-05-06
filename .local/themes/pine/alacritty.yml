@@ -1,0 +1,28 @@
+colors:
+  # Default colors
+  primary:
+    background: '#0a0a0a'
+    foreground: '#c0b18b'
+  normal:
+    black:   '#4a3637'
+    red:     '#d17b49'
+    green:   '#7b8748'
+    yellow:  '#af865a'
+    blue:    '#306e52'
+    magenta: '#775759'
+    cyan:    '#6d715e'
+    white:   '#c0b18b' 
+  bright:
+    black:   '#402e2e'
+    red:     '#ac5d2f'
+    green:   '#647035'
+    yellow:  '#8f6840'
+    blue:    '#3b8765'
+    magenta: '#614445'
+    cyan:    '#585c49'
+    white:   '#978965'
+
+window:
+  decorations: none
+  title: alacritty
+  opacity: 1.0
