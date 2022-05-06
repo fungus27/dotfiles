@@ -1,0 +1,9 @@
+export FINDDIRS="$HOME/datad/general $HOME/datad/resources $HOME/.config $HOME/.local/bin $HOME/.local/src $HOME/.local/themes $HOME/temp $HOME/files $HOME/proj"
+export ZDOTDIR="$HOME/.config/zsh"
+export LESSHISTFILE="-"
+export HISTFILE="$HOME/.config/zsh/.zsh_history"
+export PYTHONSTARTUP="$HOME/.config/.pythonrc"
+export XAUTHORITY="$HOME/.config/.Xauthority"
+export GNUPGHOME="$HOME/.config/.gnupg"
+export PASSWORD_STORE_DIR="$HOME/.config/.password-store"
+export EDITOR=nvim
