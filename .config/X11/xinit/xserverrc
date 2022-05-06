@@ -1,1 +1,2 @@
-/etc/X11/xinit/xserverrc
+#!/bin/sh
+exec /usr/bin/X -ardelay 210 -arinterval 20 -nolisten tcp "$@"
