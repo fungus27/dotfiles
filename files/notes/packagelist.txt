@@ -4,6 +4,7 @@ ccls
 dash
 dmenu
 fzf
+hex
 man-db
 man-pages
 mpv
@@ -29,6 +30,7 @@ zathura-pdf-mupdf
 zsh
 
 yay:
+lf-bin
 picom-ibhagwan-git
 
 manual:

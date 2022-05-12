@@ -2,4 +2,4 @@
 [Default Applications]
 image/png=sxiv.desktop
 text/*=nvim.desktop
-application/pdf=org.pwmt.zathura-pdf-mupdf.desktop
+*/pdf=org.pwmt.zathura-pdf-mupdf.desktop
