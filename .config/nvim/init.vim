@@ -18,15 +18,17 @@ call plug#end()
 " custom functions
 fun! ReadMan()
 		" Assign current word under cursor to a script variable:
-		let s:man_word = expand('<cword>')
+		let s:man_word = input("man page for: ")
 		" Open a new window:
-		:exe ":below 100vnew"
+		:exe ":100vnew"
 		" Read in the manpage for man_word (col -b is for formatting):
 		:exe ":r!man 3 " . s:man_word . " | col -b"
 		" Goto first line...
 		:exe ":goto"
 		" and delete it:
 		:exe ":delete"
+        " finally set file type to 'man':
+        :exe ":set filetype=man"
 endfun
 
 function DelTrailWs() abort
@@ -57,7 +59,6 @@ let g:lsp_signature_help_enabled = 0 "life saver
 let g:lightline = {
 						\ 'colorscheme': 'powerline',
 						\ }
-
 
 " fzf
 let g:fzf_layout = { 'down': '30%' }
@@ -138,6 +139,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
+set noequalalways
 syntax on
  
 let mapleader = " "
@@ -205,11 +207,11 @@ nnoremap <leader>- :VFiler<cr>
 nnoremap <leader>w :w<cr>
 nnoremap <leader>z :cclose<cr>
 
-nnoremap <leader>sm :call ReadMan()<cr>
+nnoremap <leader>sm :call ReadMan()<cr><c-r><c-w>
 
 " build and run
 nnoremap <leader><F1> :AsyncRun -cwd=<root> if [ -f "Makefile" \] \|\| [ -f "makefile" \]; then make; else ./build.sh; fi<cr>
-nnoremap <leader><F2> :AsyncRun -mode=term -pos=right -cols=100 -cwd=<root> ./run.sh<cr>
+nnoremap <leader><F2> :AsyncRun -mode=term -pos=left -cols=100 -cwd=<root> ./run.sh<cr>
 
 " option bindings
 nnoremap <leader>Oc :set termguicolors!<cr>
