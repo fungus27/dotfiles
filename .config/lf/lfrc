@@ -1,0 +1,53 @@
+set drawbox
+set ifs "\n"
+set info size:time
+
+${{
+    w=$(tput cols)
+    if [ $w -le 80 ]; then
+        lf -remote "send $id set ratios 1:1"
+    elif [ $w -le 160 ]; then
+        lf -remote "send $id set ratios 1:2:3"
+    else
+        lf -remote "send $id set ratios 1:2:3:4"
+    fi
+}}
+
+
+
+
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null; done;;
+    esac
+}}
+
+cmd bulk-rename ${{
+    old="$(mktemp)"
+    new="$(mktemp)"
+    if [ -n "$fs" ]; then
+        fs="$(basename -a $fs)"
+    else
+        fs="$(ls)"
+    fi
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+
+cmd yank-path $printf '%s' "$fx" | xclip -i -selection clipboard
+
+map R bulk-rename

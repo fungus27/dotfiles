@@ -8,3 +8,4 @@ export GNUPGHOME="$HOME/.config/.gnupg"
 export PASSWORD_STORE_DIR="$HOME/.config/.password-store"
 export EDITOR=nvim
 export BROWSER=chromium
+export OPENER=xdg-open
