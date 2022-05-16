@@ -18,12 +18,12 @@ fi
 echo $THEME
 
 cp "$HOME/.local/themes/$THEME/st.h" $HOME/.local/src/st/theme.h
-sudo make clean install -C $HOME/.local/src/st
+sudo make clean install -C $HOME/.local/src/st > /dev/null
 
 cp "$HOME/.local/themes/$THEME/alacritty.yml" $HOME/.config/alacritty/colors.yml
 
 cp "$HOME/.local/themes/$THEME/dwm.h" $HOME/.local/src/dwm/theme.h
-sudo make clean install -C $HOME/.local/src/dwm
+sudo make clean install -C $HOME/.local/src/dwm > /dev/null
 
 cp "$HOME/.local/themes/$THEME/prompt" $HOME/.config/zsh/.prompt
 
@@ -31,5 +31,5 @@ cp "$HOME/.local/themes/$THEME/picom.conf" $HOME/.config/picom/picom.conf
 
 cp "$HOME/.local/themes/$THEME/wallpaper.png" $HOME/.config/wallpaper.png
 
-xwallpaper --zoom $HOME/.config/wallpaper.png
+xwallpaper --zoom $HOME/.config/wallpaper.png > /dev/null
 #echo "To see changes, restart X"

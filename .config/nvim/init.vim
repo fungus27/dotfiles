@@ -7,13 +7,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'savq/melange'
 Plug 'cocopon/iceberg.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'obaland/vfiler.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'simeji/winresizer'
+Plug 'ptzz/lf.vim'
+Plug 'voldikss/vim-floaterm'
+" Plug 'vim-airline/vim-airline'
 call plug#end()
+
 
 " custom functions
 fun! ReadMan()
@@ -38,6 +40,14 @@ function DelTrailWs() abort
 endfunc
 
 
+" floatterm
+let g:floaterm_title = ""
+let g:floaterm_borderchars = ""
+hi FloatermBorder guibg=bg guifg=bg
+
+" lf.vim
+let g:lf_map_keys = 0
+
 " lsp
 if executable('ccls')
 		au User lsp_setup call lsp#register_server({
@@ -56,9 +66,9 @@ let g:lsp_signature_help_enabled = 0 "life saver
 
 
 " lightline
-let g:lightline = {
-						\ 'colorscheme': 'powerline',
-						\ }
+" let g:lightline = {
+" 						\ 'colorscheme': 'powerline',
+" 						\ }
 
 " fzf
 let g:fzf_layout = { 'down': '30%' }
@@ -72,10 +82,6 @@ command -nargs=? FilesGlob call fzf#vim#files(<q-args>, fzf#vim#with_preview({ '
 " asyncrun
 let g:asyncrun_rootmarks = ['Makefile', 'makefile', '.git', '.root', '.project'] 
 let g:asyncrun_open = 12 
-
-
-" vfiler
-source ~/.config/nvim/lua/filer.lua
 
 
 " winresizer
@@ -130,6 +136,28 @@ let g:startify_lists = [
 						\ ]
 
 
+" status line
+hi StatusLine cterm=NONE
+hi StatusLineNC cterm=NONE
+hi WinSeparator cterm=NONE
+hi StatusLineSpace cterm=strikethrough
+
+set laststatus=3
+set statusline=
+set statusline+=\ %t
+set statusline+=\ %m
+set statusline+=\ %r\ 
+set statusline+=%#StatusLineSpace#
+set statusline+=%=
+set statusline+=%#StatusLine#
+set statusline+=\ \ [%n]
+set statusline+=\ \ \ %{&fileformat}\ \|
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\ \|
+set statusline+=\ fxngxs\ \|
+set statusline+=\ %p%%\ \|
+set statusline+=\ %-3c
+
+
 set viminfo+=n~/.config/nvim/viminfo
 set relativenumber
 set number
@@ -141,7 +169,7 @@ set shiftwidth=4
 set expandtab
 set noequalalways
 syntax on
- 
+
 let mapleader = " "
 nnoremap <space> <nop>
 
@@ -202,7 +230,7 @@ nnoremap <leader>to :tabo<cr>
 
 nnoremap <leader>f :Files %:p:h<cr>
 nnoremap <leader>F :FilesGlob<cr>
-nnoremap <leader>- :VFiler<cr>
+nnoremap <leader>- :Lf<cr>
 
 nnoremap <leader>w :w<cr>
 nnoremap <leader>z :cclose<cr>
