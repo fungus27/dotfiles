@@ -187,7 +187,7 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 
 nnoremap <leader>cd :LspDefinition<cr>
-nnoremap <leader>cD :LspDecleration<cr>
+nnoremap <leader>cD :LspDeclaration<cr>
 nnoremap <leader>ch :LspHover<cr>
 nnoremap <leader>cr :LspReferences<cr>
 nnoremap <leader>cf :LspWorkspaceSymbol<cr>
