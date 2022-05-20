@@ -73,7 +73,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Functions
 sr() {
 	if [ -z "$1" ]; then
-		getdirfiles f | fzf | xargs -r rifle 
+		getdirfiles f | fzf | xargs -r xdg-open 
 	else	
 		if [ "$1" == "cd" ]; then
 			sdtmp=$(getdirfiles d | fzf) 
