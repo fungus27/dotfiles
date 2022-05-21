@@ -11,8 +11,10 @@ mpv
 nvidia
 nvidia-settings
 pass
-pulseaudio
-pulseaudio-alsa
+pipewire
+pipewire-alsa
+pipewire-pulse
+wireplumber
 pulsemixer
 sxiv
 tor
