@@ -98,6 +98,9 @@ static const Layout layouts[] = {
 
 /* commands */
 #define TERMINAL "alacritty"
+#define SCRATCHPAD "$HOME/.cache/scratchpad"
+#define TODO "$HOME/files/notes/todo"
+
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_normbg, "-nf", col_normfg, "-sb", col_main, "-sf", col_selfg, NULL };
 static const char *termcmd[]  = { TERMINAL, NULL};
@@ -108,7 +111,7 @@ static const char *btopcmd[] = { TERMINAL, "-e", "btop", NULL };
 static const char *lfcmd[] = { TERMINAL, "-e", "/bin/sh", "-c", "sleep 0.05; lf ~", NULL };
 static const char *closercmd[] = { "closer", dmenufont, col_normbg, col_normfg, col_main, col_selfg, NULL };
 
-static const char *spudcmd[] = { TERMINAL, "-t", "spud", "-e", "/bin/sh", "-c", "sleep 0.05; nvim \"+e $HOME/files/notes/todo\" \"+vsplit\" \"+e $HOME/.cache/scratchpad\"", NULL };
+static const char *spudcmd[] = { TERMINAL, "-t", "spud", "-e", "/bin/sh", "-c", "sleep 0.05; nvim \"+e " TODO "\" \"+vsplit\" \"+e " SCRATCHPAD "\"", NULL };
 static const char *spasscmd[] = { TERMINAL, "-t", "spass", "-e", "fzfpass", "loop", NULL };
 static const char *spermcmd[] = { TERMINAL, "-t", "sperm", NULL };
 static const char *addtospadcmd[] = { "addtospad", NULL };

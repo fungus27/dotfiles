@@ -10,26 +10,26 @@ fi
 
 
 if [ "$1" = "-r" ]; then
-	THEME="$(ls -l $HOME/.local/themes | awk '{print $9}' | tail +4 | shuf -n 1)"	
+	THEME="$(ls -l $THEME_DIR | awk '{print $9}' | tail +4 | shuf -n 1)"	
 else
 	THEME=$1
 fi
 
 echo $THEME
 
-cp "$HOME/.local/themes/$THEME/st.h" $HOME/.local/src/st/theme.h
-sudo make clean install -C $HOME/.local/src/st > /dev/null
+#cp "$THEME_DIR/$THEME/st.h" $HOME/.local/src/st/theme.h
+#sudo make clean install -C $HOME/.local/src/st > /dev/null
 
-cp "$HOME/.local/themes/$THEME/alacritty.yml" $HOME/.config/alacritty/colors.yml
+cp "$THEME_DIR/$THEME/alacritty.yml" $HOME/.config/alacritty/colors.yml
 
-cp "$HOME/.local/themes/$THEME/dwm.h" $HOME/.local/src/dwm/theme.h
+cp "$THEME_DIR/$THEME/dwm.h" $HOME/.local/src/dwm/theme.h
 sudo make clean install -C $HOME/.local/src/dwm > /dev/null
 
-cp "$HOME/.local/themes/$THEME/prompt" $HOME/.config/zsh/.prompt
+cp "$THEME_DIR/$THEME/prompt" $HOME/.config/zsh/.prompt
 
-cp "$HOME/.local/themes/$THEME/picom.conf" $HOME/.config/picom/picom.conf
+cp "$THEME_DIR/$THEME/picom.conf" $HOME/.config/picom/picom.conf
 
-cp "$HOME/.local/themes/$THEME/wallpaper.png" $HOME/.config/wallpaper.png
+cp "$THEME_DIR/$THEME/wallpaper.png" $HOME/.config/wallpaper.png
 
 xwallpaper --zoom $HOME/.config/wallpaper.png > /dev/null
 #echo "To see changes, restart X"

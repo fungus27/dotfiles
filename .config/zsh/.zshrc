@@ -1,4 +1,3 @@
-source ~/.zshenv
 HISTSIZE=1000
 SAVEHIST=1000
 unsetopt beep extendedglob nomatch
@@ -52,11 +51,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^x' edit-command-line
 
-# Env vars
-export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
-
-# Path
-export PATH="$HOME/.local/bin:$HOME/.local/scripts:$PATH"
 
 # Aliases
 # alias wget="wget --hsts-file -"

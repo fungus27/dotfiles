@@ -1,8 +1,8 @@
 #!/bin/sh
-[ ! -d "$HOME/.cache/exchange" ] && mkdir "$HOME/.cache/exchange"
-if [ "$(stat -c %y "$HOME/.cache/exchange/$1$2" 2> /dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] || [ ! -s "$HOME/.cache/exchange/$1$2" ]; then 
-	curl -s "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/$1/$2.json" > "$HOME/.cache/exchange/$1$2"
+[ ! -d "$EXCHANGE_DIR" ] && mkdir "$EXCHANGE_DIR"
+if [ "$(stat -c %y "$EXCHANGE_DIR/$1$2" 2> /dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] || [ ! -s "$EXCHANGE_DIR/$1$2" ]; then 
+	curl -s "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/$1/$2.json" > "$EXCHANGE_DIR/$1$2"
 fi;
 
 
-tail +3 "$HOME/.cache/exchange/$1$2" | head -n 1 | awk '{print $2}' | grep -o -P '.*\..{0,2}' | tr -d '\n' | xargs -0 printf "%s$3\n"
+tail +3 "$EXCHANGE_DIR/$1$2" | head -n 1 | awk '{print $2}' | grep -o -P '.*\..{0,2}' | tr -d '\n' | xargs -0 printf "%s$3\n"

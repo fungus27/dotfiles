@@ -1,3 +1,4 @@
 #!/bin/sh
 
-[ -z "$1" ] && { xclip -selection clipboard -o 2> /dev/null | xargs -0 printf "\n%s\n" >> "$HOME/.cache/scratchpad"; } || { printf "\n$1\n" >> "$HOME/.cache/scratchpad"; }
+[ -z "$1" ] && { xclip -selection clipboard -o 2> /dev/null | xargs -0 printf "\n%s\n" >> "$SCRATCHPAD"; } || { printf "\n$1\n" >> "$SCRATCHPAD"; }
+

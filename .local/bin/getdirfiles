@@ -1,5 +1,5 @@
 #!/bin/sh
 
-for val in $FINDDIRS; do
-	find $val -type $1	
+for dir in $FINDDIRS; do
+	find $dir -type $1	
 done

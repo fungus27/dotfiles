@@ -212,6 +212,7 @@ text/x-scheme=nvim.desktop
 text/x-scons=nvim.desktop
 text/x-scss=nvim.desktop
 text/x-setext=nvim.desktop
+text/x-shellscript=nvim.desktop
 text/x-ssa=nvim.desktop
 text/x-subviewer=nvim.desktop
 text/x-svhdr=nvim.desktop
