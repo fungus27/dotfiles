@@ -244,6 +244,7 @@ nnoremap <leader><F2> :AsyncRun -mode=term -pos=left -cols=100 -cwd=<root> ./run
 " option bindings
 nnoremap <leader>Oc :set termguicolors!<cr>
 nnoremap <leader>Oh :set hlsearch!<cr> 
+nnoremap <leader>Ou :set ignorecase!<cr>
 
 " command aliases
 command CDC cd %:p:h
