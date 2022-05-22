@@ -111,7 +111,7 @@ static const char *btopcmd[] = { TERMINAL, "-e", "btop", NULL };
 static const char *lfcmd[] = { TERMINAL, "-e", "/bin/sh", "-c", "sleep 0.05; lf ~", NULL };
 static const char *closercmd[] = { "closer", dmenufont, col_normbg, col_normfg, col_main, col_selfg, NULL };
 
-static const char *spudcmd[] = { TERMINAL, "-t", "spud", "-e", "/bin/sh", "-c", "sleep 0.05; nvim \"+e " TODO "\" \"+vsplit\" \"+e " SCRATCHPAD "\"", NULL };
+static const char *spudcmd[] = { TERMINAL, "-t", "spud", "-e", "/bin/sh", "-c", "sleep 0.05; nvim -n \"+e " TODO "\" \"+vsplit\" \"+e " SCRATCHPAD "\"", NULL };
 static const char *spasscmd[] = { TERMINAL, "-t", "spass", "-e", "fzfpass", "loop", NULL };
 static const char *spermcmd[] = { TERMINAL, "-t", "sperm", NULL };
 static const char *addtospadcmd[] = { "addtospad", NULL };
