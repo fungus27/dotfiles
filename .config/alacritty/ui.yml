@@ -1,0 +1,13 @@
+window:
+ padding:
+    x: 3
+    y: 3
+
+font:
+  normal:
+    family: "terminal"
+    style: Regular
+  bold:
+    family: "terminal"
+    style: Bold
+  size: 12

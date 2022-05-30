@@ -1,0 +1,33 @@
+#!/bin/sh
+
+while getopts 'f:s:p:b:d:l' opt; do
+    case "$opt" in
+        f)
+            sed "s/family: .*/family: \"$OPTARG\"/" ~/.config/alacritty/ui.yml > ~/.config/alacritty/ui_temp.yml;
+            mv ~/.config/alacritty/ui_temp.yml ~/.config/alacritty/ui.yml;
+            sed "s/static const char \*fonts\[\] = {.*:/static const char *fonts[] = {\"$OPTARG:/;
+            s/static const char dmenufont\[\] = .*:/static const char dmenufont[] = \"$OPTARG:/" ~/.local/src/dwm/ui.h > ~/.local/src/dwm/ui_temp.h;
+            mv ~/.local/src/dwm/ui_temp.h ~/.local/src/dwm/ui.h;
+            touch ~/.config/alacritty/alacritty.yml;;
+        s)
+            sed "s/size: .*/size: $OPTARG/" ~/.config/alacritty/ui.yml > ~/.config/alacritty/ui_temp.yml;
+            sed "s/:size=[[:digit:]]\+\"/:size=$OPTARG\"/" ~/.local/src/dwm/ui.h > ~/.local/src/dwm/ui_temp.h;
+            mv ~/.local/src/dwm/ui_temp.h ~/.local/src/dwm/ui.h;
+            mv ~/.config/alacritty/ui_temp.yml ~/.config/alacritty/ui.yml;
+            touch ~/.config/alacritty/alacritty.yml;;
+        p)
+            sed "s/\s\+x: .*/    x: $OPTARG/;s/\s\+y: .*/    y: $OPTARG/" ~/.config/alacritty/ui.yml > ~/.config/alacritty/ui_temp.yml;
+            mv ~/.config/alacritty/ui_temp.yml ~/.config/alacritty/ui.yml;
+            touch ~/.config/alacritty/alacritty.yml;;
+        b)
+            sed "s/static const unsigned int borderpx = .*/static const unsigned int borderpx = $OPTARG;/" ~/.local/src/dwm/ui.h > ~/.local/src/dwm/ui_temp.h;
+            mv ~/.local/src/dwm/ui_temp.h ~/.local/src/dwm/ui.h;;
+        d) 
+            sed -E "s/shadow = (true|false)/shadow = $OPTARG/" ~/.config/picom/picom.conf > ~/.config/picom/picom-temp.conf;
+            mv ~/.config/picom/picom-temp.conf ~/.config/picom/picom.conf;;
+        l)
+            cat ~/.local/src/dwm/ui.h ~/.config/alacritty/ui.yml;;
+        
+    esac
+done
+

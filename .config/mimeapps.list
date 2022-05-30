@@ -98,6 +98,7 @@ image/x-xcursor=sxiv.desktop
 image/x-xfig=sxiv.desktop
 image/x-xpixmap=sxiv.desktop
 image/x-xwindowdump=sxiv.desktop
+inode/x-empty=nvim.desktop
 text/cache-manifest=nvim.desktop
 text/calendar=nvim.desktop
 text/css=nvim.desktop

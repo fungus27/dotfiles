@@ -1,1 +1,1 @@
-export PROMPT="%F{7}[%F{15}fungus@fungus%F{7} %~]%F{7}$ %f"
+export PROMPT="%F{11}[%F{196}fungus@fungus%F{15} %~%F{11}]$ %f"

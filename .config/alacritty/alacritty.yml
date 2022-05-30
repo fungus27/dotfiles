@@ -1,18 +1,10 @@
 import:
   - ~/.config/alacritty/colors.yml
-
-font:
-  normal:
-    family: dylex terminal
-    style: Regular
+  - ~/.config/alacritty/ui.yml
 
 cursor:
   style:
     shape: Block
     blinking: Never
-  thickness: 0.27
+  thickness: 0.17
 
-window:
-  dimensions:
-    columns: 50
-    lines: 20

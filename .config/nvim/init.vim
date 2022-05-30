@@ -13,6 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'simeji/winresizer'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'sainnhe/gruvbox-material'
 " Plug 'vim-airline/vim-airline'
 call plug#end()
 
@@ -217,8 +218,10 @@ nnoremap <leader>vl :below vsplit<cr>
 nnoremap <leader>l :BLines<cr>
 nnoremap <leader>L :Lines<cr>
 
-nnoremap <leader>rv :AsyncRun -mode=term -pos=right -cols=100<space>
-nnoremap <leader>rs :AsyncRun -mode=term -pos=bottom -rows=15<space>
+nnoremap <leader>rl :AsyncRun -mode=term -pos=right -cols=100<space>
+nnoremap <leader>rj :AsyncRun -mode=term -pos=bottom -rows=15<space>
+nnoremap <leader>rh :AsyncRun -mode=term -pos=left -cols=100<space>
+nnoremap <leader>rk :AsyncRun -mode=term -pos=top -rows=15<space>
 nnoremap <leader>rt :AsyncRun -mode=term -pos=TAB -reuse<space>
 nnoremap <leader>rq :AsyncRun<space>
 
