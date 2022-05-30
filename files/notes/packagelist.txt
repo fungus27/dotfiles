@@ -19,7 +19,6 @@ pulsemixer
 sxiv
 tor
 tree
-ttf-ubraille
 xclip
 xorg-server
 xorg-xinit
