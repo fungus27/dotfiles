@@ -75,6 +75,10 @@ sr() {
 			unset sdtmp
 		elif [ "$1" == "la" ]; then
 			getdirfiles d | fzf | xargs -r ls -alh 
+        elif [ "$1" == "mv" ]; then
+            mv $(getdirfiles d,f | fzf) $(getdirfiles d | fzf)
+        elif [ "$1" == "cp" ]; then
+            cp $(getdirfiles d,f | fzf) $(getdirfiles d | fzf)
 		else
 			getdirfiles f | fzf | xargs -r $1 
 		fi

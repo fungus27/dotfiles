@@ -29,7 +29,11 @@ cp "$THEME_DIR/$THEME/prompt" $HOME/.config/zsh/.prompt
 
 cp "$THEME_DIR/$THEME/picom.conf" $HOME/.config/picom/picom.conf
 
-cp "$THEME_DIR/$THEME/wallpaper.png" $HOME/.config/wallpaper.png
-
-xwallpaper --zoom $HOME/.config/wallpaper.png > /dev/null
+if [ -d "$THEME_DIR/$THEME/wallpapers" ]; then
+    cp "$THEME_DIR/$THEME/wallpapers/$(ls -1 $THEME_DIR/$THEME/wallpapers | shuf -n 1)" $HOME/.config/wallpaper.png
+else
+    cp "$THEME_DIR/$THEME/wallpaper.png" $HOME/.config/wallpaper.png
+fi
+    
+xwallpaper --zoom $HOME/.config/wallpaper.png > /dev/null 2>&1
 #echo "To see changes, restart X"

@@ -1,0 +1,3 @@
+#!/bin/sh
+STDIN=$(cat)
+echo $STDIN | xclip -selection clipboard
