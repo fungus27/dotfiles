@@ -22,6 +22,4 @@ colors:
     white:   '0x818181'
 
 window:
-  decorations: none
-  title: alacritty
   opacity: 1.0

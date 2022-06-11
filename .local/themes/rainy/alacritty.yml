@@ -22,6 +22,4 @@ colors:
     white:   '0xaeaeae'
 
 window:
-  decorations: none
-  title: alacritty
   opacity: 0.70

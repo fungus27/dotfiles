@@ -37,6 +37,4 @@ colors:
 
 
 window:
-  decorations: none
-  title: alacritty
   opacity: 1.0

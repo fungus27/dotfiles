@@ -48,6 +48,7 @@ hi FloatermBorder guibg=bg guifg=bg
 
 " lf.vim
 let g:lf_map_keys = 0
+let g:lf_replace_netrw = 1
 
 " lsp
 if executable('ccls')

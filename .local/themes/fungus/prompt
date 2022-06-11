@@ -1,0 +1,1 @@
+export PROMPT="%F{13}[%F{196}fxngxs %F{15} %~%F{13}]$ %f"
