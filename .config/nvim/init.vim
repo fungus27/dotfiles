@@ -1,10 +1,10 @@
 " plugins
 call plug#begin()
-Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/vim-lsp'
+Plug '~/proj/vim-lsp'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'morhetz/gruvbox'
 Plug 'savq/melange'
 Plug 'cocopon/iceberg.vim'
 Plug 'skywind3000/asyncrun.vim'
@@ -24,6 +24,8 @@ fun! ReadMan()
 		let s:man_word = input("man page for: ")
 		" Open a new window:
 		:exe ":100vnew"
+        :exe "setlocal bt=nofile bh=wipe nobl noswf"
+        :exe ":file [man] " . s:man_word
 		" Read in the manpage for man_word (col -b is for formatting):
 		:exe ":r!man 3 " . s:man_word . " | col -b"
 		" Goto first line...
@@ -31,7 +33,7 @@ fun! ReadMan()
 		" and delete it:
 		:exe ":delete"
         " finally set file type to 'man':
-        :exe ":set filetype=man"
+        :exe ":setlocal filetype=man"
 endfun
 
 function DelTrailWs() abort
@@ -41,14 +43,14 @@ function DelTrailWs() abort
 endfunc
 
 
+" lf.vim
+let g:lf_map_keys = 0
+let g:lf_replace_netrw = 1
+
 " floatterm
 let g:floaterm_title = ""
 let g:floaterm_borderchars = ""
 hi FloatermBorder guibg=bg guifg=bg
-
-" lf.vim
-let g:lf_map_keys = 0
-let g:lf_replace_netrw = 1
 
 " lsp
 if executable('ccls')
@@ -65,7 +67,23 @@ let g:lsp_document_highlight_enabled = 0
 let g:lsp_completion_documentation_enabled = 0
 let g:lsp_document_code_action_signs_enabled = 0 "disable wierd A>
 let g:lsp_signature_help_enabled = 0 "life saver
+let g:lsp_preview_float = 1
 
+hi PopupWindow cterm=NONE
+
+augroup lsp_float_colours
+    autocmd!
+    if !has('nvim')
+        autocmd User lsp_float_opened
+                    \ call setwinvar(lsp#document_hover_preview_winid(),
+                    \		       '&wincolor', 'PopupWindow')
+    else
+        autocmd User lsp_float_opened
+                    \ call nvim_win_set_option(
+                    \   lsp#document_hover_preview_winid(),
+                    \   'winhighlight', 'Normal:PopupWindow')
+    endif
+augroup end
 
 " lightline
 " let g:lightline = {
@@ -144,6 +162,14 @@ hi StatusLineNC cterm=NONE
 hi WinSeparator cterm=NONE
 hi StatusLineSpace cterm=strikethrough
 
+augroup CS_CHANGE
+    autocmd!
+    autocmd ColorScheme * hi StatusLine cterm=NONE
+    autocmd ColorScheme * hi StatusLineNC cterm=NONE
+    autocmd ColorScheme * hi WinSeparator cterm=NONE
+    autocmd ColorScheme * hi StatusLineSpace cterm=strikethrough
+augroup END
+
 set laststatus=3
 set statusline=
 set statusline+=\ %t
@@ -206,7 +232,7 @@ vnoremap <leader>uK :norm 03x<cr>
 vnoremap <leader>uk <esc>`<3x`>xxx
 
 nnoremap <leader>bl :Buffers<cr>
-nnoremap <leader>bd :bd!<cr>
+nnoremap <leader>bd :bd<cr>
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>ba :badd 
