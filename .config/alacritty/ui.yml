@@ -1,4 +1,6 @@
 window:
+ decorations: none
+ title: alacritty
  padding:
     x: 3
     y: 3
@@ -9,5 +11,5 @@ font:
     style: Regular
   bold:
     family: "terminal"
-    style: Bold
-  size: 12
+    style: Regular
+  size: 11
