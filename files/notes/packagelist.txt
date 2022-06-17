@@ -33,8 +33,8 @@ zsh
 yay:
 lf-bin
 picom-ibhagwan-git
+btop
 
 manual:
 yay-git
 ungoogled-chromium
-btop
