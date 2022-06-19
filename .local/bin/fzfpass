@@ -1,6 +1,6 @@
 #!/bin/sh
 while true; do
-tmpentry=$(find "$PASSWORD_STORE_DIR" -type f | grep ".gpg$" | sed 's@'"$PASSWORD_STORE_DIR"'/@@;s@.gpg$@@' | xargs -r printf "%s\n" | fzf) 
+tmpentry=$(find "$PASSWORD_STORE_DIR" -type f | grep ".gpg$" | sed 's@'"$PASSWORD_STORE_DIR"'/@@;s@.gpg$@@' | xargs -r printf "%s\n" | fzf --height=100)
 [ ! -z "$tmpentry" ] && pass show -c $tmpentry 1> /dev/null
 [ "$1" != "loop" ] && break
 clear
