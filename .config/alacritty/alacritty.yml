@@ -4,7 +4,7 @@ import:
 
 cursor:
   style:
-    shape: Block
+    shape: Beam
     blinking: Never
   thickness: 0.17
 
