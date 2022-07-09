@@ -276,5 +276,6 @@ nnoremap <leader>Oc :set termguicolors!<cr>
 nnoremap <leader>Oh :set hlsearch!<cr>
 nnoremap <leader>Ou :set ignorecase!<cr>
 
-" command aliases
+" commands
 command CDC cd %:p:h
+command! -nargs=+ Grep execute 'silent grep! <args>' | copen
