@@ -36,6 +36,14 @@ fun! ReadMan()
         :exe ":setlocal filetype=man"
 endfun
 
+funct! SearchBufs()
+    let s:re = input("regex: ")
+    cexpr []
+    call setqflist([], 'a', {'title': 'grep "' . s:re . '"'})
+    execute 'silent! noautocmd bufdo vimgrepadd /' . s:re . '/j %'
+    cw
+endfunct
+
 function DelTrailWs() abort
     normal mz
     %s/\v\s+$//ge
@@ -264,8 +272,10 @@ nnoremap <leader>- :Lf<cr>
 
 nnoremap <leader>w :w<cr>
 nnoremap <leader>z :cclose<cr>
+nnoremap <leader>Z :copen<cr>
 
 nnoremap <leader>sm :call ReadMan()<cr><c-r><c-w>
+nnoremap <leader>sr :call SearchBufs()<cr>
 
 " build and run
 nnoremap <leader><F1> :AsyncRun -cwd=<root> if [ -f "Makefile" \] \|\| [ -f "makefile" \]; then make; else ./build.sh; fi<cr>
@@ -278,4 +288,3 @@ nnoremap <leader>Ou :set ignorecase!<cr>
 
 " commands
 command CDC cd %:p:h
-command! -nargs=+ Grep execute 'silent grep! <args>' | copen
