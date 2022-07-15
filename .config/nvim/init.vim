@@ -244,6 +244,9 @@ nnoremap <leader>bd :bd<cr>
 nnoremap <leader>bn :bn<cr>
 nnoremap <leader>bp :bp<cr>
 nnoremap <leader>ba :badd 
+nnoremap <leader>bt :b term<cr>
+" alternate buffer
+nnoremap <BS> <C-^>
 
 nnoremap <leader>vh :vsplit<cr>
 nnoremap <leader>vj :below split<cr>
