@@ -27,7 +27,7 @@ fun! ReadMan()
         :exe "setlocal bt=nofile bh=wipe nobl noswf"
         :exe ":file [man] " . s:man_word
 		" Read in the manpage for man_word (col -b is for formatting):
-		:exe ":r!man 3 " . s:man_word . " | col -b"
+		:exe ":r!man " . s:man_word . " | col -b"
 		" Goto first line...
 		:exe ":goto"
 		" and delete it:
