@@ -11,5 +11,8 @@ font:
     style: Regular
   bold:
     family: "terminal"
-    style: Regular
+    style: Bold
+  italic:
+    family: "terminal"
+    style: Italic
   size: 11
