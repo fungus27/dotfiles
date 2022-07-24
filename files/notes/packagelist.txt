@@ -28,6 +28,8 @@ xwallpaper
 zathura
 zathura-pdf-mupdf
 zsh
+(optional):
+moreutils
 
 yay:
 lf-bin
@@ -37,3 +39,6 @@ btop
 manual:
 yay-git
 ungoogled-chromium
+vimium
+gloc
+adblock

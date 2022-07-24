@@ -21,17 +21,23 @@ call plug#end()
 " custom functions
 fun! ReadMan()
 		" Assign current word under cursor to a script variable:
-		let s:man_word = input("man page for: ")
+        let s:c_word = expand("<cword>")
+		let s:man_word = input("man page for (" . s:c_word . "): ")
+
+        if s:man_word == ""
+            let s:man_word = s:c_word
+        endif
+
 		" Open a new window:
-		:exe ":100vnew"
-        :exe "setlocal bt=nofile bh=wipe nobl noswf"
-        :exe ":file [man] " . s:man_word
+		exe ":100vnew"
+        exe "setlocal bt=nofile bh=wipe nobl noswf"
+        exe ":file [man] " . s:man_word
 		" Read in the manpage for man_word (col -b is for formatting):
-		:exe ":r!man " . s:man_word . " | col -b"
+		exe ":r!man " . s:man_word . " | col -b"
 		" Goto first line...
-		:exe ":goto"
+		exe ":goto"
 		" and delete it:
-		:exe ":delete"
+		exe ":delete"
         " finally set file type to 'man':
         :exe ":setlocal filetype=man"
 endfun
@@ -277,7 +283,7 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>z :cclose<cr>
 nnoremap <leader>Z :copen<cr>
 
-nnoremap <leader>sm :call ReadMan()<cr><c-r><c-w>
+nnoremap <leader>sm :call ReadMan()<cr>
 nnoremap <leader>sr :call SearchBufs()<cr>
 
 " build and run
