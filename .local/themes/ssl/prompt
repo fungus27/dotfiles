@@ -1,0 +1,1 @@
+export PROMPT="%F{#0d13a3}[%F{#8b241f}fungus@fungus %~%F{#0d13a3}]$ %f"
