@@ -1,0 +1,1 @@
+export PROMPT="%F{3}[fungus@fungus%F{9} %~%F{3}]%f$ "
