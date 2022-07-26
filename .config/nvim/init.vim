@@ -1,22 +1,20 @@
 " plugins
 call plug#begin()
-" Plug 'prabirshrestha/vim-lsp'
-Plug '~/proj/vim-lsp'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'savq/melange'
-Plug 'cocopon/iceberg.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-fugitive'
 Plug 'simeji/winresizer'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'sainnhe/gruvbox-material'
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-surround'
-" Plug 'vim-airline/vim-airline'
+" colorschemes
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/everforest'
+Plug 'cocopon/iceberg.vim'
 call plug#end()
 
 
@@ -176,14 +174,10 @@ let g:startify_lists = [
 						\ ]
 " easymotion
 let g:EasyMotion_do_mapping = 0
-nnoremap <leader>F <Plug>(easymotion-sn)
-nnoremap <leader>f <Plug>(easymotion-s)
-nnoremap <leader>d <Plug>(easymotion-ld-w)
-nnoremap <leader>a <Plug>(easymotion-jumptoanywhere)
+nnoremap <leader>a <Plug>(easymotion-s)
+nnoremap <leader>f <Plug>(easymotion-bd-w)
 nnoremap <leader>j <Plug>(easymotion-j)
 nnoremap <leader>k <Plug>(easymotion-k)
-nnoremap <leader>x <Plug>(easymotion-overwin-line)
-
 
 
 " status line
