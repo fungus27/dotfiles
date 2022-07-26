@@ -12,9 +12,15 @@ Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'easymotion/vim-easymotion'
 " colorschemes
-Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/everforest'
+Plug 'andreasvc/vim-256noir'
 Plug 'cocopon/iceberg.vim'
+Plug 'fcpg/vim-orbital'
+Plug 'haystackandroid/snow'
+Plug 'nanotech/jellybeans.vim'
+Plug 'rebelot/kanagawa.nvim'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
+Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 
