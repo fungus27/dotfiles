@@ -4,6 +4,7 @@ ccls
 dash
 dmenu
 fzf
+gdb
 hex
 man-db
 man-pages
