@@ -6,16 +6,17 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'mhinz/vim-startify'
-Plug 'tpope/vim-fugitive'
 Plug 'simeji/winresizer'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'easymotion/vim-easymotion'
 " colorschemes
 Plug 'andreasvc/vim-256noir'
+Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'fcpg/vim-orbital'
 Plug 'haystackandroid/snow'
+Plug 'machakann/vim-sandwich'
 Plug 'nanotech/jellybeans.vim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'sainnhe/everforest'
@@ -182,9 +183,6 @@ let g:startify_lists = [
 let g:EasyMotion_do_mapping = 0
 nnoremap <leader>a <Plug>(easymotion-s)
 nnoremap <leader>f <Plug>(easymotion-bd-w)
-nnoremap <leader>j <Plug>(easymotion-j)
-nnoremap <leader>k <Plug>(easymotion-k)
-
 
 " status line
 hi StatusLine cterm=NONE
@@ -198,6 +196,11 @@ augroup CS_CHANGE
     autocmd ColorScheme * hi StatusLineNC cterm=NONE
     autocmd ColorScheme * hi WinSeparator cterm=NONE
     autocmd ColorScheme * hi StatusLineSpace cterm=strikethrough
+augroup END
+
+augroup LSP_HIGHLIGHT
+    autocmd!
+    autocmd User EasyMotionPromptEnd LspCxxHighlight
 augroup END
 
 set laststatus=3
