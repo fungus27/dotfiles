@@ -1,22 +1,22 @@
 " plugins
 call plug#begin()
-Plug 'prabirshrestha/vim-lsp'
+Plug 'easymotion/vim-easymotion'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'skywind3000/asyncrun.vim'
+Plug 'machakann/vim-sandwich'
 Plug 'mhinz/vim-startify'
-Plug 'simeji/winresizer'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'ptzz/lf.vim'
+Plug 'simeji/winresizer'
+Plug 'skywind3000/asyncrun.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'easymotion/vim-easymotion'
 " colorschemes
 Plug 'andreasvc/vim-256noir'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cocopon/iceberg.vim'
 Plug 'fcpg/vim-orbital'
 Plug 'haystackandroid/snow'
-Plug 'machakann/vim-sandwich'
 Plug 'nanotech/jellybeans.vim'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'sainnhe/everforest'
@@ -218,17 +218,18 @@ set statusline+=\ fvngvs\ \|
 set statusline+=\ %p%%\ \|
 set statusline+=\ %-3c
 
-set viminfo+=n~/.config/nvim/viminfo
-set relativenumber
-set number
-set nowrap
-set nohlsearch
-set scrolloff=10
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
 set expandtab
 set noequalalways
+set nohlsearch
+set nowrap
+set number
+set relativenumber
+set scrolloff=10
+set shiftwidth=4
+set showtabline=0
+set softtabstop=4
+set tabstop=4
+set viminfo+=n~/.config/nvim/viminfo
 syntax on
 
 " unmap useless keys
@@ -275,7 +276,7 @@ nnoremap <leader>vl :below vsplit<cr>
 nnoremap <leader>r :AsyncRun<space>
 
 nnoremap <leader>t :term<cr>
-tnoremap <c-q> <c-\><c-n>
+tnoremap <a-q> <c-\><c-n>
 
 nnoremap <leader>sr :FilesGlob<cr>
 nnoremap <leader>- :Lf<cr>
