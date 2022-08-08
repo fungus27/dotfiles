@@ -63,6 +63,11 @@ function DelTrailWs() abort
     normal `z
 endfunc
 
+fun! Breakpoint()
+    call setreg('p', "b " . line("."))
+    exe ":buffer term"
+    exe "norm! \"pp"
+endfun
 
 let mapleader = " "
 nnoremap <space> <nop>
@@ -277,6 +282,7 @@ nnoremap <leader>r :AsyncRun<space>
 
 nnoremap <leader>t :term<cr>
 tnoremap <a-q> <c-\><c-n>
+nnoremap <a-b> :call Breakpoint()<cr>
 
 nnoremap <leader>sr :FilesGlob<cr>
 nnoremap <leader>- :Lf<cr>
