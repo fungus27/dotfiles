@@ -214,6 +214,12 @@ augroup LSP_HIGHLIGHT
     autocmd User EasyMotionPromptEnd LspCxxHighlight
 augroup END
 
+augroup NOMATCHPAREN
+    autocmd!
+    autocmd BufEnter term://* NoMatchParen
+    autocmd BufLeave term://* DoMatchParen
+augroup END
+
 set laststatus=3
 set statusline=
 set statusline+=\ %t
