@@ -69,6 +69,12 @@ fun! Breakpoint()
     exe "norm! \"pp"
 endfun
 
+fun! InsertTerm()
+    if &buftype ==# "terminal"
+       norm i
+    endif
+endfun
+
 let mapleader = " "
 nnoremap <space> <nop>
 
@@ -289,10 +295,10 @@ tnoremap <C-h> <C-\><C-n><C-w>h
 tnoremap <C-j> <C-\><C-n><C-w>j
 tnoremap <C-k> <C-\><C-n><C-w>k
 tnoremap <C-l> <C-\><C-n><C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <silent> <C-h> <C-w>h:call InsertTerm()<cr>
+nnoremap <silent> <C-j> <C-w>j:call InsertTerm()<cr>
+nnoremap <silent> <C-k> <C-w>k:call InsertTerm()<cr>
+nnoremap <silent> <C-l> <C-w>l:call InsertTerm()<cr>
 
 nnoremap <leader>sr :FilesGlob<cr>
 nnoremap <leader>- :Lf<cr>
