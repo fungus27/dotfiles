@@ -216,8 +216,8 @@ augroup END
 
 augroup NOMATCHPAREN
     autocmd!
-    autocmd BufEnter term://* NoMatchParen
-    autocmd BufLeave term://* DoMatchParen
+    autocmd TermEnter * NoMatchParen
+    autocmd TermLeave * DoMatchParen
 augroup END
 
 set laststatus=3
@@ -281,7 +281,8 @@ vnoremap <leader>uc <esc>`<3x`>xxx
 
 nnoremap <leader>bl :Buffers<cr>
 nnoremap <leader>bd :bd<cr>
-nnoremap <leader>bt :b term<cr>
+nnoremap <leader>bt :b term://<cr>
+nnoremap <C-n> :bn<cr>
 " alternate buffer
 nnoremap <BS> <C-^>
 
