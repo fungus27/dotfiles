@@ -246,6 +246,8 @@ set showtabline=0
 set softtabstop=4
 set tabstop=4
 set viminfo+=n~/.config/nvim/viminfo
+set undofile
+set lazyredraw
 syntax on
 
 " unmap useless keys
