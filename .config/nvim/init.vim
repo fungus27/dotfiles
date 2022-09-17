@@ -4,7 +4,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'machakann/vim-sandwich'
 Plug 'mhinz/vim-startify'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'ptzz/lf.vim'
