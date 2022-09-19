@@ -43,3 +43,6 @@ ungoogled-chromium
 vimium
 gloc
 adblock
+
+honorable mentions:
+signika_negative font
