@@ -1,9 +1,9 @@
 #!/bin/sh
 
 if [ -z "$(pidof tor)" ]; then
-	sudo tor > /dev/null & echo "--proxy-server=\"socks5://localhost:9050\"\n--host-resolver-rules=\"MAP * ~NOTFOUND , EXCLUDE localhost\"\n--new-window\ndark.fail" >> "$HOME/.config/chromium-flags.conf"
+	sudo tor > /dev/null &
 else
-	sudo kill $(pidof tor) && head -n -4 "$HOME/.config/chromium-flags.conf" > "$HOME/.config/temp.txt" ; mv "$HOME/.config/temp.txt"  "$HOME/.config/chromium-flags.conf" 
+	sudo kill $(pidof tor)
 fi
 sleep 0.1
 kill -48 $(pidof dwmblocks)

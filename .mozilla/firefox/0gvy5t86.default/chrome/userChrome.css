@@ -1,0 +1,144 @@
+#navigator-toolbox #new-tab-button,
+#navigator-toolbox #list-all-tabs-button,
+#navigator-toolbox .list-all-tabs-button,
+#navigator-toolbox #list-tabs-button,
+#navigator-toolbox .list-tabs-button,
+#navigator-toolbox .tabs-newtab-button,
+#navigator-toolbox #toolbar-menubar,
+#navigator-toolbox #home-button,
+#navigator-toolbox #reload-button,
+#navigator-toolbox #back-button,
+#navigator-toolbox #forward-button,
+#navigator-toolbox .tab-close-button,
+#navigator-toolbox #pageActionSeparator,
+#navigator-toolbox #pageActionButton,
+#webrtcIndicator
+{
+  display: none;
+}
+
+#navigator-toolbox { 
+font-family:CtrlD !important 
+}
+#navigator-toolbox #urlbar-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#navigator-toolbox #urlbar {
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+#navigator-toolbox #urlbar-background {
+  background: black !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#navigator-toolbox #urlbar {
+  background: black !important;
+  color: white !important;
+  padding: 0 !important;
+  padding-left: 6px !important;
+}
+#navigator-toolbox #tracking-protection-icon-container {
+  display: none;
+}
+#navigator-toolbox #urlbar-zoom-button {
+  border: none !important;
+}
+#tabbrowser-tabs
+  .tabbrowser-tab[first-visible-tab='true'][last-visible-tab='true'] {
+  visibility: collapse !important;
+}
+#navigator-toolbox #PanelUI-button {
+  border: none !important;
+}
+#navigator-toolbox #nav-bar {
+  background: black !important;
+}
+#navigator-toolbox .toolbarbutton-1 {
+  background: black;
+  width: 26px;
+  border-left: solid 1px black;
+  box-shadow: none !important;
+  padding: 0 !important;
+  --toolbarbutton-hover-background: #380a00 !important;
+  --toolbarbutton-active-background: #380a00 !important;
+}
+
+.urlbar-icon[open],
+.urlbar-icon-wrapper[open],
+.urlbar-icon:not([disabled]):hover:active,
+.urlbar-icon-wrapper:hover:active {
+   background-color: red !important;
+}
+
+.urlbar-icon-wrapper[open] > .urlbar-icon,
+.urlbar-icon-wrapper > .urlbar-icon:hover,
+.urlbar-icon-wrapper > .urlbar-icon:hover:active {
+   background-color: red !important;
+}
+
+#navigator-toolbox #PanelUI-menu-button {
+  background: black;
+  border: none;
+}
+#navigator-toolbox toolbarbutton image {
+  color: white !important;
+}
+#navigator-toolbox #PanelUI-menu-button image {
+  display: block;
+  color: white !important;
+}
+
+#navigator-toolbox #identity-permission-box {
+  display: none !important;
+}
+
+#navigator-toolbox .tab-content {
+  font-size: 12px;
+  line-height: 13px;
+  padding: 1px 4px 1px 5px !important;
+}
+#tabbrowser-tabs,
+#tabbrowser-arrowscrollbox {
+  min-height: 0 !important;
+}
+#navigator-toolbox .toolbar-items {
+  background: black;
+}
+#navigator-toolbox .tab-background {
+  background: black !important;
+  border: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+#navigator-toolbox .tabbrowser-tab .tab-label {
+  color: white !important;
+}
+#navigator-toolbox .tab-background .tab-line {
+  display: none;
+}
+#navigator-toolbox .tabbrowser-tab::after {
+  display: none !important;
+}
+#navigator-toolbox .tab-icon-image {
+  margin-top: 0 !important;
+}
+
+#navigator-toolbox .tab-background[selected='true'] {
+  background: black !important;
+}
+#navigator-toolbox .tabbrowser-tab[selected='true'] .tab-label {
+  color: red !important;
+}
+
+#tabbrowser-tabs .tabs-newtab-button:hover > .toolbarbutton-icon {
+  background-color: red !important;
+}
+
+#context_pinTab, #context_duplicateTab, #context_moveTabOptions, #context_selectAllTabs, #context_closeTab,
+#context_bookmarkTab, #context_openANewTab, #context_reloadTab, #context_undoCloseTab {
+  display: none;
+}

@@ -13,10 +13,9 @@ export THEME_DIR="$HOME/.local/themes"
 export SCRATCHPAD="$HOME/.cache/scratchpad"
 export EXCHANGE_DIR="$HOME/.cache/exchange"
 export EDITOR=nvim
-export BROWSER=chromium
+export BROWSER=firefox
 export OPENER=xdg-open
 export TERMINAL=alacritty
-
 
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
