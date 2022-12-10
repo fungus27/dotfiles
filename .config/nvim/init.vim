@@ -10,6 +10,7 @@ Plug 'ptzz/lf.vim'
 Plug 'simeji/winresizer'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'tpope/vim-fugitive'
 " colorschemes
 Plug 'andreasvc/vim-256noir'
 Plug 'arcticicestudio/nord-vim'
@@ -85,7 +86,8 @@ let g:lf_replace_netrw = 1
 " floatterm
 let g:floaterm_title = ""
 let g:floaterm_borderchars = ""
-hi FloatermBorder guibg=bg guifg=bg
+hi link Floaterm Normal
+hi link FloatermBorder Normal
 
 " lsp
 if executable('ccls')
@@ -194,6 +196,9 @@ let g:EasyMotion_do_mapping = 0
 nnoremap <leader>a <Plug>(easymotion-s)
 nnoremap <leader>f <Plug>(easymotion-bd-w)
 
+" vim-fugitive
+let g:fugitive_no_maps = 1
+
 " status line
 hi StatusLine cterm=NONE
 hi StatusLineNC cterm=NONE
@@ -284,6 +289,7 @@ nnoremap <leader>bl :Buffers<cr>
 nnoremap <leader>bd :bd<cr>
 nnoremap <leader>bt :b term://<cr>
 nnoremap <C-n> :bn<cr>
+nnoremap <C-p> :bp<cr>
 " alternate buffer
 nnoremap <BS> <C-^>
 
@@ -309,6 +315,11 @@ nnoremap <silent> <C-k> <C-w>k:call InsertTerm()<cr>
 nnoremap <silent> <C-l> <C-w>l:call InsertTerm()<cr>
 
 nnoremap <leader>sr :FilesGlob<cr>
+nnoremap <leader>lf :GFiles<cr>
+nnoremap <leader>ll :Lines<cr>
+nnoremap <leader>lc :Commits<cr>
+nnoremap <leader>lbc :BCommits<cr>
+vnoremap <leader>lbc :BCommits<cr>
 nnoremap <leader>- :Lf<cr>
 
 nnoremap <leader>w :w<cr>
