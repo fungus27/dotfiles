@@ -86,8 +86,9 @@ let g:lf_replace_netrw = 1
 " floatterm
 let g:floaterm_title = ""
 let g:floaterm_borderchars = ""
-hi link Floaterm Normal
-hi link FloatermBorder Normal
+hi NormalFloat cterm=NONE gui=NONE
+hi Floaterm cterm=NONE gui=NONE
+hi FloatermBorder cterm=NONE gui=NONE
 
 " lsp
 if executable('ccls')
@@ -106,7 +107,7 @@ let g:lsp_document_code_action_signs_enabled = 0 " disable wierd A>
 let g:lsp_signature_help_enabled = 0 "life saver
 let g:lsp_preview_float = 1
 
-hi PopupWindow cterm=NONE
+hi PopupWindow cterm=NONE gui=NONE
 
 augroup lsp_float_colours
     autocmd!
