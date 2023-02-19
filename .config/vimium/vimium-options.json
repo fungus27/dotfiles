@@ -1,5 +1,5 @@
 {
-  "settingsVersion": "1.67.1",
+  "settingsVersion": "1.67.6",
   "exclusionRules": [
     {
       "pattern": "https?://mail.google.com/*",
@@ -9,7 +9,7 @@
   "filterLinkHints": false,
   "waitForEnterForFilteredHints": true,
   "hideHud": true,
-  "keyMappings": "# Insert your preferred key mappings here.",
+  "keyMappings": "unmap d\nunmap u\nmap <c-u> scrollPageUp\nmap <c-d> scrollPageDown\nmap D closeTabsOnRight\nmap d0 closeTabsOnLeft",
   "linkHintCharacters": "sadfjklewcmpgh",
   "linkHintNumbers": "0123456789",
   "newTabUrl": "about:newtab",

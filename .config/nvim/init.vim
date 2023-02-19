@@ -254,6 +254,7 @@ set tabstop=4
 set viminfo+=n~/.config/nvim/viminfo
 set undofile
 set lazyredraw
+set mouse=
 syntax on
 
 " unmap useless keys
