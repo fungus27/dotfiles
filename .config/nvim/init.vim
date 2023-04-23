@@ -63,6 +63,11 @@ function DelTrailWs() abort
     normal `z
 endfunc
 
+fun! IncludeGuard()
+    let s:name = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+    exe "norm ggO#ifndef " . s:name . "\<cr>#define " . s:name . "\<cr>\<esc>Go\<cr>#endif // " . s:name
+endfun
+
 fun! Breakpoint()
     call setreg('p', "b " . line("."))
     exe ":buffer term"
@@ -224,6 +229,12 @@ augroup NOMATCHPAREN
     autocmd TermEnter * NoMatchParen
     autocmd TermLeave * DoMatchParen
 augroup END
+
+augroup NO_AUTO_COMMENT
+    autocmd!
+    autocmd FileType * setlocal formatoptions-=o
+augroup END
+
 
 set laststatus=3
 set statusline=
