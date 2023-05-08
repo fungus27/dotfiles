@@ -1,0 +1,51 @@
+auto-reload yes
+show-title-bar no
+show-keymap-hint no
+
+reload-threads 15
+
+bind-key SPACE macro-prefix
+
+bind-key j down
+bind-key k up
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
+bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
+bind-key D pb-download
+bind-key U show-urls
+bind-key x pb-delete
+
+bind-key S save
+
+browser "setsid -f $BROWSER > /dev/null 2>&1"
+macro w set browser "setsid -f mpv --really-quiet --no-terminal"; open-in-browser; set browser "setsid -f $BROWSER > /dev/null 2>&1"
+macro 1 set browser "setsid -f urlopen"; one; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 2 set browser "setsid -f urlopen"; two; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 3 set browser "setsid -f urlopen"; three; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 4 set browser "setsid -f urlopen"; four; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 5 set browser "setsid -f urlopen"; five; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 6 set browser "setsid -f urlopen"; six; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 7 set browser "setsid -f urlopen"; seven; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 8 set browser "setsid -f urlopen"; eight; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 9 set browser "setsid -f urlopen"; nine; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+macro 0 set browser "setsid -f urlopen"; zero; set browser "setsid -f $BROWSER > /dev/null 2>&1" 
+
+color listnormal cyan default
+color listfocus black yellow standout bold
+color listnormal_unread blue default
+color listfocus_unread yellow default bold
+color info red black bold
+color article white default
+
+highlight article "^(Feed|Title|Date|Author|Link):" blue default bold
+highlight article "https?://[^ ]+" green default underline
+highlight article "\\[[0-9]+\\]" yellow default bold
+highlight article "\\[image\\ [0-9]+\\]" magenta default bold

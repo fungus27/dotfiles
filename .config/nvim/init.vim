@@ -9,8 +9,10 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'ptzz/lf.vim'
 Plug 'simeji/winresizer'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
+Plug 'voldikss/vim-floaterm'
+Plug 'whonore/Coqtail', { 'for': 'coq' }
+Plug '~/.local/share/nvim/plugged/coq-conceal' " TODO: make this a plugin
 " colorschemes
 Plug 'andreasvc/vim-256noir'
 Plug 'arcticicestudio/nord-vim'
@@ -128,10 +130,8 @@ augroup lsp_float_colours
     endif
 augroup end
 
-" lightline
-" let g:lightline = {
-" 						\ 'colorscheme': 'powerline',
-" 						\ }
+" coqtail
+let g:coqtail_nomap = 1
 
 " fzf
 let g:fzf_layout = { 'down': '30%' }
@@ -350,6 +350,16 @@ nnoremap <leader><F2> :AsyncRun -mode=term -pos=left -cols=100 -cwd=<root> ./run
 nnoremap <leader>\c :set termguicolors!<cr>
 nnoremap <leader>\h :set hlsearch!<cr>
 nnoremap <leader>\u :set ignorecase!<cr>
+
+" coq
+augroup COQ
+    autocmd!
+    autocmd FileType coq nnoremap <leader>cc :CoqStart<cr>
+    autocmd FileType coq nnoremap <leader>cq :CoqStop<cr>
+    autocmd FileType coq nnoremap <a-j> :CoqNext<cr>
+    autocmd FileType coq nnoremap <a-k> :CoqUndo<cr>
+    autocmd FileType coq nnoremap <leader>cl :CoqToLine<cr>
+augroup END
 
 " commands
 command CDC cd %:p:h

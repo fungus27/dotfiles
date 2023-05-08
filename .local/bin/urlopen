@@ -1,0 +1,7 @@
+#!/bin/sh
+
+filename=$(curl --output-dir "/tmp" -vO $1 |& grep "> GET" | grep -o "/[A-Za-z0-9_\-]\+\.[a-zA-Z]\+" | cut -c2-)
+
+xdg-open "/tmp/$filename"
+
+rm "/tmp/$filename"

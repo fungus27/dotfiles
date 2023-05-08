@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 echo "\033[0mNO_COLOR"
 echo "\033[30m0 BLACK\t\t\033[90m8  BRIGHT_BLACK"
