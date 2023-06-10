@@ -1,7 +1,7 @@
 #!/bin/sh
 
 [ -z $1 ] && echo "archive.sh: Usage: archive.sh [file]" 1>&2 && exit 1
-[ ! -f $1 ] && echo "archive.sh: $1: No such file or directory" 1>&2 && exit 1
+[ ! -f $1 ] && echo "archive.sh: $1: No such file or directory." 1>&2 && exit 1
 [ -f "$1.enc" ] && echo "archive.sh: $1.enc: File already exists." 1>&2 && exit 1
 
 key=$(head -c 32 /dev/urandom | hexdump -e '"%x"')

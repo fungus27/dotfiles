@@ -6,6 +6,7 @@
 fname=$( echo $1 | head -c -5 )
 
 [ -f $fname ] && echo "unarchive.sh: $fname: File already exists." 1>&2 && exit 1
+[ ! -f "$fname-key-iv.txt" ] && echo "unarchive.sh: $fname-key-iv.txt: No such file or directory." 1>&2 && exit 1
 
 key=$(grep "^key (hex):" "$fname-key-iv.txt" | cut -d' ' -f 3)
 iv=$(grep "^iv (hex):" "$fname-key-iv.txt" | cut -d' ' -f 3)
