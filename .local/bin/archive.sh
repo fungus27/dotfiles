@@ -7,6 +7,16 @@
 key=$(head -c 32 /dev/urandom | hexdump -e '"%x"')
 iv=$(head -c 16 /dev/urandom | hexdump -e '"%x"')
 
+# pad the key to 64 characters (32 bytes)
+while [ ${#key} -lt 64 ]; do
+  key="${key}0"
+done
+
+# pad the iv to 32 characters (16 bytes)
+while [ ${#iv} -lt 32 ]; do
+  iv="${iv}0"
+done
+
 printf "key (hex): %s\niv (hex): %s\n" $key $iv
 printf "alg: aes-256-cbc\nkey (hex): %s\niv (hex): %s\n" $key $iv >> "$1-key-iv.txt"
 

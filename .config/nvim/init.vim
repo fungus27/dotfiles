@@ -12,6 +12,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm'
 Plug 'whonore/Coqtail', { 'for': 'coq' }
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug '~/.local/share/nvim/plugged/coq-conceal' " TODO: make this a plugin
 " colorschemes
 Plug 'andreasvc/vim-256noir'
@@ -204,6 +205,9 @@ nnoremap <leader>f <Plug>(easymotion-bd-w)
 
 " vim-fugitive
 let g:fugitive_no_maps = 1
+
+" vim-latex-live-preview
+let g:livepreview_previewer = 'zathura'
 
 " status line
 hi StatusLine cterm=NONE

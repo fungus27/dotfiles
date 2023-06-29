@@ -5,7 +5,6 @@ import os
 # other stuff
 # content.proxy
 # clean up
-# editor
 
 config.load_autoconfig(False)
 
@@ -33,6 +32,8 @@ c.tabs.favicons.show = "never"
 c.tabs.show = "never"
 c.tabs.title.format = "{index}: [{host}] {audio}{current_title}"
 c.tabs.title.format_pinned = c.tabs.title.format
+
+c.input.insert_mode.auto_leave = False
 
 c.colors.webpage.preferred_color_scheme = "dark"
 c.colors.statusbar.caret.bg = "black"
@@ -88,14 +89,17 @@ c.url.start_pages = "http://zupa.xyz/"
 c.content.blocking.method = "both"
 
 terminal = os.environ["TERMINAL"]
+editor = os.environ["EDITOR"]
 
-c.editor.command = [terminal, "-e","nvim", "{file}"]
+c.editor.command = [terminal, "-e", editor, "{file}"]
 
 config.bind("<Ctrl-N>", "completion-item-focus next", mode="command")
 config.bind("<Ctrl-P>", "completion-item-focus prev", mode="command")
 
 leader_key = "<space>"
 
+config.bind(f"O", "set-cmd-text -s :open -r -t")
+#config.bind(f"b", "set-cmd-text -s :bookmark-load")
 config.bind(f"{leader_key}t", "config-cycle tabs.show always never")
 config.bind(f"{leader_key}et", "config-cycle tabs.width 15% 40%")
 config.bind(f"{leader_key}w", "spawn mpv {url}")
