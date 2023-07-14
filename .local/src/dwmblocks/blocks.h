@@ -6,9 +6,9 @@ static const Block blocks[] = {
 	{"cpu: ","~/.local/bin/cpu_load"							,	10,		0},
 	{"space: ", "df -h ~ | awk 'FNR == 2 {print $2}'"					,	120,		0},
 	{"tor: ", "[ -z \"$(pidof tor)\" ] && echo off || echo on"				,	0,		14},
-	{"usd: ", "echo \"$(exchange usd pln zl)\""						,	7200,		0},
-	{"xmr: ", "echo \"$(exchange xmr pln zl) ($(exchange xmr usd $))\""			,	7200,		0},
-	{"btc: ", "echo \"$(exchange btc pln zl) ($(exchange btc usd $))\""			,	7200,		0}
+	{"usd: ", "echo \"$(exchange usd pln zl)\""						,	300,		0},
+	{"xmr: ", "echo \"$(exchange xmr pln zl) ($(exchange xmr usd $))\""			,	300,		0},
+	{"btc: ", "echo \"$(exchange btc pln zl) ($(exchange btc usd $))\""			,	300,		0}
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.

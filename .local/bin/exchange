@@ -1,7 +1,8 @@
 #!/bin/sh
 [ ! -d "$EXCHANGE_DIR" ] && mkdir "$EXCHANGE_DIR"
 if [ "$(stat -c %y "$EXCHANGE_DIR/$1$2" 2> /dev/null | cut -d' ' -f1)" != "$(date '+%Y-%m-%d')" ] || [ ! -s "$EXCHANGE_DIR/$1$2" ]; then 
-	curl -s "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/$1/$2.json" > "$EXCHANGE_DIR/$1$2"
+    newdata=$(curl -s "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/$1/$2.json")
+    [ ! -z "$newdata" ] && echo "$newdata" > "$EXCHANGE_DIR/$1$2"
 fi;
 
 
