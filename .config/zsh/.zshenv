@@ -13,15 +13,16 @@ export THEME_DIR="$HOME/.local/themes"
 export SCRATCHPAD="$HOME/.cache/scratchpad"
 export EXCHANGE_DIR="$HOME/.cache/exchange"
 export EDITOR=nvim
-export BROWSER=firefox
+export BROWSER=qutebrowser
 export OPENER=xdg-open
 export TERMINAL=alacritty
 
-
-export LESS_TERMCAP_mb=$'\e[1;32m'
-export LESS_TERMCAP_md=$'\e[1;32m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\e[7m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[1;4;31m'
+esc=$(printf \\033)
+export LESS_TERMCAP_mb="${esc}[1;32m"
+export LESS_TERMCAP_md="${esc}[1;32m"
+export LESS_TERMCAP_me="${esc}[0m"
+export LESS_TERMCAP_se="${esc}[0m"
+export LESS_TERMCAP_so="${esc}[7m"
+export LESS_TERMCAP_ue="${esc}[0m"
+export LESS_TERMCAP_us="${esc}[1;4;31m"
+export GROFF_NO_SGR=1
