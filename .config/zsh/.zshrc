@@ -63,6 +63,7 @@ alias bc="bc -q -l"
 alias cal="cal -m"
 alias lock="gpg-connect-agent reloadagent reset /bye > /dev/null 2>&1"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias latexclear="rm *.aux && rm *.log"
 
 # Functions
 sr() {
