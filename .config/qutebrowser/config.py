@@ -32,6 +32,7 @@ c.tabs.favicons.show = "never"
 c.tabs.show = "never"
 c.tabs.title.format = "{index}: [{host}] {audio}{current_title}"
 c.tabs.title.format_pinned = c.tabs.title.format
+c.tabs.title.elide = "none"
 
 c.input.insert_mode.auto_leave = False
 
@@ -98,7 +99,7 @@ config.bind("<Ctrl-P>", "completion-item-focus prev", mode="command")
 
 leader_key = "<space>"
 
-config.bind(f"O", "set-cmd-text -s :open -r -t")
+config.bind(f"O", "cmd-set-text -s :open -r -t")
 #config.bind(f"b", "set-cmd-text -s :bookmark-load")
 config.bind(f"{leader_key}t", "config-cycle tabs.show always never")
 config.bind(f"{leader_key}et", "config-cycle tabs.width 15% 40%")
