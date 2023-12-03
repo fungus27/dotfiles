@@ -1,5 +1,6 @@
 export FINDDIRS="$HOME/datad/general $HOME/datad/resources $HOME/.config $HOME/.local/bin $HOME/.local/src $HOME/.local/themes $HOME/temp $HOME/files $HOME/proj"
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export ZDOTDIR="$HOME/.config/zsh"
 export LESSHISTFILE="-"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
