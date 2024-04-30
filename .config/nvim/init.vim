@@ -332,6 +332,8 @@ nnoremap <silent> <C-k> <C-w>k:call InsertTerm()<cr>
 nnoremap <silent> <C-l> <C-w>l:call InsertTerm()<cr>
 
 nnoremap <leader>sr :FilesGlob<cr>
+nnoremap <leader>ls :w !wc -w<cr>
+vnoremap <leader>ls :w !wc -w<cr>
 nnoremap <leader>lf :GFiles<cr>
 nnoremap <leader>ll :Lines<cr>
 nnoremap <leader>lc :Commits<cr>

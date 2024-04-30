@@ -18,6 +18,7 @@ export EDITOR=nvim
 export BROWSER=qutebrowser
 export OPENER=xdg-open
 export TERMINAL=alacritty
+export LIBRARY_PATH="/usr/local/lib"
 
 esc=$(printf \\033)
 export LESS_TERMCAP_mb="${esc}[1;32m"
