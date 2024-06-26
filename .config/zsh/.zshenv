@@ -7,6 +7,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
 export PATH="$HOME/.local/bin:$PATH"
 export HISTFILE="$HOME/.config/zsh/.zsh_history"
 export PYTHONSTARTUP="$HOME/.config/.pythonrc"
+export IPYTHONDIR="$HOME/.config/.ipython"
 export XAUTHORITY="$HOME/.config/.Xauthority"
 export GNUPGHOME="$HOME/.config/.gnupg"
 export PASSWORD_STORE_DIR="$HOME/datad/general/enc/pass_store"
@@ -14,11 +15,11 @@ export PASSWORD_STORE_GENERATED_LENGHT=35
 export THEME_DIR="$HOME/.local/themes"
 export SCRATCHPAD="$HOME/.cache/scratchpad"
 export EXCHANGE_DIR="$HOME/.cache/exchange"
+export LIBRARY_PATH="/usr/local/lib"
 export EDITOR=nvim
 export BROWSER=qutebrowser
 export OPENER=xdg-open
 export TERMINAL=alacritty
-export LIBRARY_PATH="/usr/local/lib"
 
 esc=$(printf \\033)
 export LESS_TERMCAP_mb="${esc}[1;32m"

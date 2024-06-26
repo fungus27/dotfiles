@@ -269,8 +269,12 @@ set tabstop=4
 set viminfo+=n~/.config/nvim/viminfo
 set undofile
 set lazyredraw
+set notermguicolors
 set mouse=
 syntax on
+
+" colorscheme
+colorscheme vim
 
 " unmap useless keys
 nnoremap <Up> <nop>
