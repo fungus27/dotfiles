@@ -1,15 +1,11 @@
 " plugins
 call plug#begin()
-Plug 'easymotion/vim-easymotion'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'ptzz/lf.vim'
 Plug 'simeji/winresizer'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'voldikss/vim-floaterm'
 Plug 'whonore/Coqtail', { 'for': 'coq' }
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
@@ -131,16 +127,9 @@ augroup lsp_float_colours
     endif
 augroup end
 
+
 " coqtail
 let g:coqtail_nomap = 1
-
-" fzf
-let g:fzf_layout = { 'down': '30%' }
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'below split',
-  \ 'ctrl-v': 'below vsplit' }
-command -nargs=? FilesGlob call fzf#vim#files(<q-args>, fzf#vim#with_preview({ 'source': 'getdirfiles f'}))
 
 
 " asyncrun
@@ -198,14 +187,6 @@ let g:startify_lists = [
 						\ { 'type': 'bookmarks', 'header': ['   bookmarks']      },
 						\ { 'type': 'sessions',  'header': ['   sessions']       },
 						\ ]
-" easymotion
-let g:EasyMotion_do_mapping = 0
-nnoremap <leader>a <Plug>(easymotion-s)
-nnoremap <leader>f <Plug>(easymotion-bd-w)
-
-" vim-fugitive
-let g:fugitive_no_maps = 1
-
 " vim-latex-live-preview
 let g:livepreview_previewer = 'zathura'
 
@@ -296,10 +277,6 @@ nnoremap <leader>lr :LspReferences<cr>
 nnoremap <leader>/s :LspWorkspaceSymbol<cr>
 nnoremap <leader>R :LspRename<cr>
 
-" logo paste
-nnoremap <leader><F12> :r ~/files/logos/toxic<cr> 
-nnoremap <leader><F11> :r ~/files/logos/small<cr>
-
 " quick commenting
 vnoremap <leader>C :norm 0i*  <cr>`<O<esc>d0xi/*<esc>`>o<esc>d0xi*/<esc>
 vnoremap <leader>c <esc>`>a */<esc><esc>`<i/* <esc>
@@ -335,14 +312,6 @@ nnoremap <silent> <C-j> <C-w>j:call InsertTerm()<cr>
 nnoremap <silent> <C-k> <C-w>k:call InsertTerm()<cr>
 nnoremap <silent> <C-l> <C-w>l:call InsertTerm()<cr>
 
-nnoremap <leader>sr :FilesGlob<cr>
-nnoremap <leader>ls :w !wc -w<cr>
-vnoremap <leader>ls :w !wc -w<cr>
-nnoremap <leader>lf :GFiles<cr>
-nnoremap <leader>ll :Lines<cr>
-nnoremap <leader>lc :Commits<cr>
-nnoremap <leader>lbc :BCommits<cr>
-vnoremap <leader>lbc :BCommits<cr>
 nnoremap <leader>- :Lf<cr>
 
 nnoremap <leader>w :w<cr>
